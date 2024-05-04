@@ -15,18 +15,22 @@ permissions: write-all
 
 on:
   workflow_dispatch:
+    # 点击run workflow的时候，有可以选择的选项
     inputs:
       USE_MTWIFI_CFG:
+        # 使用联发科MTK的WIFI配置界面
         description: 'Use mtwifi-cfg'
         required: true
         default: true
         type: boolean
       USE_NX30PRO_EEPROM:
+        # 使用NX30PRO的EEPROM，可以增强信号
         description: 'Use nx30pro eeprom'
         required: true
         default: true
         type: boolean
       USE_52MHZ:
+        # 修改设备树DTS来，修改EMMC颗粒的频率，以提高读写速度，若颗粒不好会出现无法读写EMMC或者启动系统，慎用
         description: 'Use 52MHz max-frequency'
         required: true
         default: false
